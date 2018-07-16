@@ -7,6 +7,8 @@ function! SingleLineLatexParEndings()
 	let list += [ empty_s.'\$\$'.empty_e    ] " a line containing only '$$'
 	let list += [ empty_s.'\\begin'         ] " a line starting with '\begin'
 	let list += [ empty_s.'\\end'           ] " a line starting with '\end'
+	let list += [ empty_s.'\\section'       ] " a line starting with '\section'
+	let list += [ empty_s.'\\subsection'    ] " a line starting with '\subsection'
 	let list += [ empty_s.'{'.empty_e       ] " a line containing only '{'
 	let list += [ empty_s.'\\\a\+{'.empty_e ] " a line containing only '\anycommand{'
 	let list += [ empty_s.'}'.empty_e       ] " a line containing only '}'
