@@ -1,4 +1,13 @@
 " ******************************************************
+function! MinLineWidth()
+	if &l:textwidth <# 79
+		return 79
+	else
+		return &l:textwidth
+	endif
+endfunction
+
+" ******************************************************
 function! SingleLineLatexParEndings()
 	" Creates the regexp that searches for single-line paragraph terminators
 	let empty_s  = '^\s*'
@@ -281,10 +290,11 @@ function! FormatLatexPar(lvl)
 			" paragraph endings that are too long)
 			let next = here+1
 		else
+			let width = MinLineWidth()
 			" We are in a standard paragraph
 			
 			" Formats the lines between top and bot
-			silent exe ':'.top.','.bot.'!fmt -w 80'
+			silent exe ':'.top.','.bot.'!fmt -w '.width
 
 			" goes at the right line
 			" exe ':'.top
