@@ -304,10 +304,8 @@ function! FormatLatexPar(lvl)
 endfunction
 
 " Maps FormatPar function to Ctrl-j
-"map  <C-j>  <ESC>:silent call FormatLatexPar(0)<CR>i
-"map! <C-j>  <ESC>:silent call FormatLatexPar(0)<CR>i
-map  <C-j>  <ESC>:call FormatLatexPar(0)<CR>i
-map! <C-j>  <ESC>:call FormatLatexPar(0)<CR>i
+map  <C-j>  <ESC>:call FormatLatexPar(0)<CR>
+map! <C-j>  <ESC>:call FormatLatexPar(0)<CR>
 
 " ******************************************************
 function! ToggleComment() range
@@ -337,6 +335,6 @@ endfunction
 
 "command -range Comment call EnhancedCommentify('', 'guess', <line1>, <line2>)
 " Toggles a comment, (re)entering edit mode
-map! <C-g>  <ESC>:silent call ToggleComment()<CR>i
-map  <C-g>  :silent call ToggleComment()<CR>i
+map! <C-g>  <ESC>:silent call ToggleComment()<CR>
+map  <C-g>  :silent call ToggleComment()<CR>
 
